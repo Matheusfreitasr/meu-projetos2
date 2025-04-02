@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Krona One', sans-serif;
+    background-color: white;
+    color: #FF2DF1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #8F87F1, #C68EFD);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    background: linear-gradient(90deg, #8F87F1, #C68EFD);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    background: #FF9A9A;
+}
+
+nav a:hover {
+    background: #ff416c;
+}
+
+/* Estilo para a página ativa */
+nav a.active {
+    background: #ff416c;
+    font-weight: bold;
+    color: white;
+}
+
+.main {
+    padding: 20px;
+}
+
+.timeline {
+    margin: 50px 0;
+}
+
+.timeline-category {
+    margin-bottom: 30px;
+}
+
+.timeline-category h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.images {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    justify-content: center; /* Centraliza as imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha quando necessário */
+}
+
+.images img {
+    width: auto; /* Mantém a proporção original */
+    max-width: 200px; /* Limita a largura */
+    height: auto; /* Garante que não fique achatada */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.intro {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.carousel-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.5);
+}
+
+.carousel-caption {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo das setas de navegação */
+.carousel-control-prev, .carousel-control-next {
+    background-color: transparent; /* Remover fundo */
+    border: none; /* Remover borda */
+    color: #fff; /* Cor branca para as setas */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: transparent; /* Remover o fundo cinza */
+    color: #fff; /* Cor branca para as setas */
+}
+
+/* Estilo para hover das setas */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: transparent; /* Remover fundo ao passar o mouse */
+    color: #fff; /* Manter cor branca */
+    opacity: 0.8; /* Efeito de opacidade ao passar o mouse */
+}
+
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+}
+
+.fade {
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+    0%, 20% {
+        opacity: 0;
+    }
+    40%, 100% {
+        opacity: 1;
+    }
+}
+
+.audio-section {
+    margin-top: 30px;
+}
+
+/* CSS para centralizar o player de áudio */
+#audioButton {
+    display: block;
+    margin: 20px auto;
+}
+
+audio {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Estilo para os botões */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Adiciona a transição de escala */
+}
+
+/* Efeito de salto no botão */
+button:active {
+    transform: scale(1.1); /* O botão aumenta ligeiramente quando clicado */
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.05); /* Aumenta o botão quando o cursor passa por cima */
+}
+
+/* Botão explorar */
+.explore-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ff4b2b;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+}
+
+/* Efeito de salto no botão explorar */
+.explore-button:active {
+    transform: scale(1.1); /* Aumenta o botão explorar ao clicar */
+}
+
+.explore-button:hover {
+    background-color: #ff416c;
+    transform: scale(1.05); /* Aumenta o botão explorar ao passar o cursor */
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Estilos de cada card */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Mantém a proporção original */
+    max-height: 200px; /* Ajusta um limite de altura */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Contêiner do vídeo */
+.video-container {
+    width: 100%;
+    max-width: 600px; /* Define um tamanho máximo */
+    margin: 20px auto;
+    position: relative; /* Necessário para o botão ficar sobreposto */
+    display: none; /* Começa oculto */
+}
+
+/* Contêiner do vídeo */
+.video-container {
+    width: 90%; /* Ocupa quase toda a tela */
+    max-width: 600px; /* Limite para telas grandes */
+    margin: 20px auto;
+    position: relative;
+    display: none;
+}
+
+/* Estilo do player de vídeo */
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de fechar */
+.backButton {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: rgba(255, 75, 43, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.backButton:hover {
+    background-color: rgba(255, 75, 43, 0.8);
+}
+
+
+
+@media (max-width: 1024px) {
+    header {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .timeline-category h3 {
+        font-size: 1.8rem;
+    }
+
+    .category-text {
+        font-size: 1rem;
+    }
+
+    .carousel-inner img {
+        max-height: 500px;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.6rem;
+        padding: 15px;
+    }
+
+    .timeline {
+        padding: 0;
+    }
+
+    .images img {
+        max-width: 150px;
+    }
+
+    .carousel-inner img {
+        max-height: 400px;
+    }
+
+    .carousel-caption {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.4rem;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .timeline-category h3 {
+        font-size: 1.5rem;
+    }
+
+    .category-text {
+        font-size: 0.9rem;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images img {
+        max-width: 90%;
+    }
+
+    .carousel-inner img {
+        max-height: 500px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .card {
+        width: 220px;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        font-size: 0.85rem;
+    }
+}

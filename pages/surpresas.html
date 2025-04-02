@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Surpresas Especiais 🎁</h1>
+    </header>
+
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="momentos.html">Momentos</a>
+        <a href="surpresas.html" class="active">Surpresas</a>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>O que será ein????</h2>
+            <p class="lead">Clique nas opções abaixo para uma surpresa especial.</p>
+        </section>
+
+        <!-- Surpresa 1: Áudio -->
+        <section class="surprise-section">
+            <button id="audioButton" class="explore-button">Surpresa 1: Espero que goste</button>
+
+            <!-- O player de áudio começa oculto e será exibido quando o botão for pressionado -->
+            <audio id="surpriseAudio" controls style="display:none;">
+                <source src="../assets/audios/mensagem.mp3" type="audio/mp3">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <div id="repeatMessage" style="display:none; margin-top: 20px;">
+                <p><a href="javascript:void(0);" id="repeatAudio" class="repeat-audio">Quer ouvir de novo? rs</a></p>
+            </div>
+        </section>
+
+        <!-- Surpresa 2: Vídeo -->
+        <section class="surprise-section">
+            <button id="videoButton" class="explore-button">Surpresa 2: E tem mais é?? 😱</button>
+
+            <!-- Player de vídeo com botão de fechar -->
+            <div id="videoContainer" class="video-container">
+                <button id="backButton" style="display: none;">Voltar</button>
+                <video id="surpriseVideo" controls>
+                    <source src="../assets/videos/memories.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Site carregado com sucesso!");
+        });
+
+        // Controle do áudio
+        document.getElementById("audioButton").onclick = function () {
+            var audio = document.getElementById("surpriseAudio");
+            if (audio) {
+                audio.style.display = "block";  // Exibe o player de áudio
+                audio.play();  // Inicia o áudio
+                this.style.display = "none";  // Oculta o botão de áudio
+
+                // Quando o áudio terminar, exibe a opção para ouvir de novo
+                audio.onended = function () {
+                    document.getElementById("repeatMessage").style.display = "block";  // Exibe a opção de "Quer ouvir de novo?"
+                };
+            }
+        };
+
+        // Função para reproduzir o áudio novamente quando clicar em "Quer ouvir de novo?"
+        document.getElementById("repeatAudio").onclick = function () {
+            var audio = document.getElementById("surpriseAudio");
+            if (audio) {
+                audio.currentTime = 0;  // Reseta o áudio para o início
+                audio.play();  // Reproduz o áudio novamente
+
+                // Esconde a mensagem de repetição após clicar
+                document.getElementById("repeatMessage").style.display = "none";  // Esconde a opção "Quer ouvir de novo?"
+            }
+        };
+
+        // Exibir o player de vídeo ao clicar no botão
+        document.getElementById("videoButton").onclick = function () {
+            var videoContainer = document.getElementById("videoContainer");
+            var video = document.getElementById("surpriseVideo");
+
+            if (videoContainer && video) {
+                videoContainer.style.display = "block";  // Exibe o player de vídeo
+                video.play();  // Inicia o vídeo
+
+                // Define o volume do vídeo para 50%
+                video.volume = 0.1;  // Volume a 50%
+
+                // Oculta os botões de áudio e vídeo ao abrir o vídeo
+                document.getElementById("audioButton").style.display = "none";
+                document.getElementById("videoButton").style.display = "none";
+
+                // Mostra o botão de "Voltar" ao exibir o vídeo
+                document.getElementById("backButton").style.display = "block";
+            }
+
+            // Quando o vídeo terminar, os botões reaparecem
+            video.onended = function () {
+                // Retorna para a tela inicial mostrando os botões
+                videoContainer.style.display = "none";  // Oculta o player de vídeo
+                document.getElementById("videoButton").style.display = "inline-block";  // Mostra o botão de vídeo novamente
+                document.getElementById("audioButton").style.display = "inline-block";  // Mostra o botão de áudio novamente
+
+                // Oculta o botão de "Voltar" após o vídeo
+                document.getElementById("backButton").style.display = "none";
+            };
+        };
+
+        // Redirecionar para a página de surpresas (ou página anterior)
+        document.getElementById("backButton").onclick = function () {
+            window.location.href = "surpresas.html";  // Aqui você coloca o caminho para a página "surpresas"
+        };
+    </script>
+    
+</body>
+
+</html>
