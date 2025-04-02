@@ -380,7 +380,7 @@ button:hover {
     }
 
     .carousel-caption {
-        font-size: 1rem;
+        font-size: 1rem; /* Tamanho menor */
     }
 
     button {
@@ -432,7 +432,10 @@ button:hover {
     .carousel-inner img {
         max-height: 500px;
     }
-
+    .carousel-caption {
+        font-size: 0.9rem; /* Tamanho ainda menor */
+    }
+    
     button {
         font-size: 0.9rem;
         padding: 8px 15px;
