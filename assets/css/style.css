@@ -326,7 +326,21 @@ button:hover {
     background-color: rgba(255, 75, 43, 0.8);
 }
 
+footer {
+    background: linear-gradient(90deg, #8F87F1, #C68EFD); /* Usando o mesmo gradiente do header e nav */
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    position: relative; /* Mudança de fixed para relative, para que não sobreponha o conteúdo em telas pequenas */
+    bottom: 0;
+    width: 100%;
+}
 
+footer p {
+    margin: 0;
+}
 
 @media (max-width: 1024px) {
     header {
@@ -399,6 +413,10 @@ button:hover {
     .card-content p {
         font-size: 0.9rem;
     }
+    footer {
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -435,7 +453,7 @@ button:hover {
     .carousel-caption {
         font-size: 0.9rem; /* Tamanho ainda menor */
     }
-    
+
     button {
         font-size: 0.9rem;
         padding: 8px 15px;
@@ -451,5 +469,9 @@ button:hover {
 
     .card-content p {
         font-size: 0.85rem;
+    }
+    footer {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
